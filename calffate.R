@@ -5,7 +5,7 @@ library(FSA)
 library(ggpubr)      
 
 # Read the CSV
-setwd("/Users/jannawilloughby/Google Drive/My Drive/Willoughby lab/projects - archive/Caribou/MCH Calf Survival/Calf Fate Data and Manuscript/")
+setwd("/Users/jannawilloughby/Google Drive/My Drive/Willoughby lab/projects - archive/Caribou/MCH Calf Survival/Calf Fate Data and Manuscript/caribou_calffate/")
 
 ###amount of death####
 df <- read.csv("caribou_neonate_mortality.csv")
@@ -27,7 +27,7 @@ ggplot(df, aes(x = Year)) +
   geom_line(aes(y = Mortality, color = Region), size = 1.2) +
   geom_point(aes(y = Mortality, color = Region), size = 2) +
   geom_line(aes(y = Cap_scaled, color = Region), linetype = "dashed", size = 1) +
-  scale_color_manual(values = c("East" = "firebrick", "West" = "steelblue")) +
+  scale_color_manual(values = c("East" = "steelblue", "West" = "firebrick")) +
   scale_y_continuous(
     name = "Mortality Rate (Died / Captured)",
     sec.axis = sec_axis(
